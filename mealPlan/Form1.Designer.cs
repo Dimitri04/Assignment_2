@@ -31,18 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboMeal1 = new System.Windows.Forms.ComboBox();
+            this.cboMeal2 = new System.Windows.Forms.ComboBox();
+            this.cboMeal3 = new System.Windows.Forms.ComboBox();
             this.lblQunatity1 = new System.Windows.Forms.Label();
             this.lblQunatity2 = new System.Windows.Forms.Label();
             this.lblQunatity3 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblTax = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtQty1 = new System.Windows.Forms.TextBox();
+            this.txtQty2 = new System.Windows.Forms.TextBox();
+            this.txtQty3 = new System.Windows.Forms.TextBox();
             this.btnOrderNow = new System.Windows.Forms.Button();
             this.lblType1 = new System.Windows.Forms.Label();
             this.lblType2 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.lblShowSubTotal = new System.Windows.Forms.Label();
             this.lblShowTax = new System.Windows.Forms.Label();
             this.lblShowTotal = new System.Windows.Forms.Label();
+            this.lblCboErr = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -85,29 +86,29 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Dinner";
             // 
-            // comboBox1
+            // cboMeal1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(309, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(273, 33);
-            this.comboBox1.TabIndex = 3;
+            this.cboMeal1.FormattingEnabled = true;
+            this.cboMeal1.Location = new System.Drawing.Point(309, 95);
+            this.cboMeal1.Name = "cboMeal1";
+            this.cboMeal1.Size = new System.Drawing.Size(273, 33);
+            this.cboMeal1.TabIndex = 3;
             // 
-            // comboBox2
+            // cboMeal2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(309, 168);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(273, 33);
-            this.comboBox2.TabIndex = 4;
+            this.cboMeal2.FormattingEnabled = true;
+            this.cboMeal2.Location = new System.Drawing.Point(309, 168);
+            this.cboMeal2.Name = "cboMeal2";
+            this.cboMeal2.Size = new System.Drawing.Size(273, 33);
+            this.cboMeal2.TabIndex = 4;
             // 
-            // comboBox3
+            // cboMeal3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(309, 241);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(273, 33);
-            this.comboBox3.TabIndex = 5;
+            this.cboMeal3.FormattingEnabled = true;
+            this.cboMeal3.Location = new System.Drawing.Point(309, 241);
+            this.cboMeal3.Name = "cboMeal3";
+            this.cboMeal3.Size = new System.Drawing.Size(273, 33);
+            this.cboMeal3.TabIndex = 5;
             // 
             // lblQunatity1
             // 
@@ -163,26 +164,26 @@
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "Total";
             // 
-            // textBox1
+            // txtQty1
             // 
-            this.textBox1.Location = new System.Drawing.Point(804, 95);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 12;
+            this.txtQty1.Location = new System.Drawing.Point(804, 95);
+            this.txtQty1.Name = "txtQty1";
+            this.txtQty1.Size = new System.Drawing.Size(100, 31);
+            this.txtQty1.TabIndex = 12;
             // 
-            // textBox2
+            // txtQty2
             // 
-            this.textBox2.Location = new System.Drawing.Point(804, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 31);
-            this.textBox2.TabIndex = 13;
+            this.txtQty2.Location = new System.Drawing.Point(804, 168);
+            this.txtQty2.Name = "txtQty2";
+            this.txtQty2.Size = new System.Drawing.Size(100, 31);
+            this.txtQty2.TabIndex = 13;
             // 
-            // textBox3
+            // txtQty3
             // 
-            this.textBox3.Location = new System.Drawing.Point(804, 241);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 31);
-            this.textBox3.TabIndex = 14;
+            this.txtQty3.Location = new System.Drawing.Point(804, 241);
+            this.txtQty3.Name = "txtQty3";
+            this.txtQty3.Size = new System.Drawing.Size(100, 31);
+            this.txtQty3.TabIndex = 14;
             // 
             // btnOrderNow
             // 
@@ -192,6 +193,7 @@
             this.btnOrderNow.TabIndex = 15;
             this.btnOrderNow.Text = "Order Now";
             this.btnOrderNow.UseVisualStyleBackColor = true;
+            this.btnOrderNow.Click += new System.EventHandler(this.btnOrderNow_Click);
             // 
             // lblType1
             // 
@@ -274,11 +276,21 @@
             this.lblShowTotal.TabIndex = 24;
             this.lblShowTotal.Text = "label6";
             // 
+            // lblCboErr
+            // 
+            this.lblCboErr.AutoSize = true;
+            this.lblCboErr.Location = new System.Drawing.Point(96, 330);
+            this.lblCboErr.Name = "lblCboErr";
+            this.lblCboErr.Size = new System.Drawing.Size(70, 25);
+            this.lblCboErr.TabIndex = 25;
+            this.lblCboErr.Text = "label4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1449, 594);
+            this.Controls.Add(this.lblCboErr);
             this.Controls.Add(this.lblShowTotal);
             this.Controls.Add(this.lblShowTax);
             this.Controls.Add(this.lblShowSubTotal);
@@ -289,23 +301,24 @@
             this.Controls.Add(this.lblType2);
             this.Controls.Add(this.lblType1);
             this.Controls.Add(this.btnOrderNow);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQty3);
+            this.Controls.Add(this.txtQty2);
+            this.Controls.Add(this.txtQty1);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTax);
             this.Controls.Add(this.lblSubtotal);
             this.Controls.Add(this.lblQunatity3);
             this.Controls.Add(this.lblQunatity2);
             this.Controls.Add(this.lblQunatity1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboMeal3);
+            this.Controls.Add(this.cboMeal2);
+            this.Controls.Add(this.cboMeal1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Meal Plan";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,18 +329,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboMeal1;
+        private System.Windows.Forms.ComboBox cboMeal2;
+        private System.Windows.Forms.ComboBox cboMeal3;
         private System.Windows.Forms.Label lblQunatity1;
         private System.Windows.Forms.Label lblQunatity2;
         private System.Windows.Forms.Label lblQunatity3;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtQty1;
+        private System.Windows.Forms.TextBox txtQty2;
+        private System.Windows.Forms.TextBox txtQty3;
         private System.Windows.Forms.Button btnOrderNow;
         private System.Windows.Forms.Label lblType1;
         private System.Windows.Forms.Label lblType2;
@@ -338,6 +351,7 @@
         private System.Windows.Forms.Label lblShowSubTotal;
         private System.Windows.Forms.Label lblShowTax;
         private System.Windows.Forms.Label lblShowTotal;
+        private System.Windows.Forms.Label lblCboErr;
     }
 }
 
