@@ -60,10 +60,49 @@ namespace mealPlan
                 if (Int32.TryParse(txtQty3.Text, out qtyArray[2]) == false) {
                     lblQtyErr3.Text = "Only Numbers";
                     errStatus = false;
-                }                
+                }
+                //This if statement checks the state of the flags 
+                //If the state has remained true the code is executed
+                if ((errStatus == true) && (cboStatus == true)){                    
+                    double subtotal = CalculateSubTotal(mealSelection, qtyArray);
+                    double tax = CalculateTax(subtotal);
+                    CalculateTotal(subtotal,tax);                     
+                }
             }
         }
-        
+        //This function calculates and returns the subtotal of the meal plan based on
+        //the meal, price and quantity and return the result        
+        private double CalculateSubTotal(string[] mealSelect, Int32[] qty) {
+            double subTotal = 0;
+            for (Int32 i = 0; i < mealSelect.Length; i++) {
+                if (mealSelect[i] == "Bagel"){ 
+                    subTotal += 3.95 * qty[i];
+                }
+                if (mealSelect[i] == "Vegetarian Special") {
+                    subTotal += 10.95 * qty[i];
+                }
+                if (mealSelect[i] == "Protein Platter") {
+                    subTotal += 11.95 * qty[i];
+                }
+            }
+            lblShowSubTotal.Text = "$" + Convert.ToString(subTotal);
+            return subTotal;
+        }
+        //This function calculates and returns the taxes applied to the meal 
+        //plan based on the subtotal   
+        private double CalculateTax(double subTotal) {
+            double tax = 0;
+            tax = Math.Round((subTotal * 0.13), 2);
+            lblShowTax.Text = "$" + Convert.ToString(tax);
+            return tax;
+        }
+        //This function calculates the final total of the meal 
+        //plan based on the subtotal and taxes
+        private void CalculateTotal(double subTotal, double tax) {
+            double total = 0;
+            total = subTotal + tax;
+            lblShowTotal.Text = "$" + Convert.ToString(total);
+        }
         //This function resets all text lables used to display content to the user
         private void resetLabels() {
             lblCboErr.ResetText();
