@@ -329,29 +329,29 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboMeal1;
-        private System.Windows.Forms.ComboBox cboMeal2;
-        private System.Windows.Forms.ComboBox cboMeal3;
         private System.Windows.Forms.Label lblQunatity1;
         private System.Windows.Forms.Label lblQunatity2;
         private System.Windows.Forms.Label lblQunatity3;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.TextBox txtQty1;
-        private System.Windows.Forms.TextBox txtQty2;
-        private System.Windows.Forms.TextBox txtQty3;
         private System.Windows.Forms.Button btnOrderNow;
         private System.Windows.Forms.Label lblType1;
         private System.Windows.Forms.Label lblType2;
         private System.Windows.Forms.Label lblType3;
-        private System.Windows.Forms.Label lblQtyErr1;
-        private System.Windows.Forms.Label lblQtyErr2;
-        private System.Windows.Forms.Label lblQtyErr3;
-        private System.Windows.Forms.Label lblShowSubTotal;
-        private System.Windows.Forms.Label lblShowTax;
-        private System.Windows.Forms.Label lblShowTotal;
         private System.Windows.Forms.Label lblCboErr;
+        public System.Windows.Forms.Label lblShowSubTotal;
+        public System.Windows.Forms.Label lblShowTax;
+        public System.Windows.Forms.Label lblShowTotal;
+        public System.Windows.Forms.ComboBox cboMeal1;
+        public System.Windows.Forms.ComboBox cboMeal2;
+        public System.Windows.Forms.ComboBox cboMeal3;
+        public System.Windows.Forms.TextBox txtQty1;
+        public System.Windows.Forms.TextBox txtQty2;
+        public System.Windows.Forms.TextBox txtQty3;
+        public System.Windows.Forms.Label lblQtyErr1;
+        public System.Windows.Forms.Label lblQtyErr2;
+        public System.Windows.Forms.Label lblQtyErr3;
     }
 }
 

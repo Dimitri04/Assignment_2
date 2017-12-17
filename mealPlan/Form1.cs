@@ -32,6 +32,7 @@ namespace mealPlan
             string[] mealSelection = new string[3];
             bool errStatus = true;
             bool cboStatus = true;
+           // bool negativieStatus = true;
 
             //Stores meal selection from comboboxes in an array
             mealSelection[0] = cboMeal1.Text;
@@ -49,18 +50,24 @@ namespace mealPlan
                 //These if statements check for invalid quantities 
                 //If any are found, the user is alerted and a flag is initialized
                 //Otherwise the data is stored in an array
-                if(Int32.TryParse(txtQty1.Text, out qtyArray[0]) == false) {
-                    lblQtyErr1.Text = "Only Numbers";
+                if((Int32.TryParse(txtQty1.Text, out qtyArray[0]) == false) || (qtyArray[0] < 1)) {
+                    lblQtyErr1.Text = "Only Positive Numbers Allowed";
+                    errStatus = false;                   
+                }
+                /*else if (qtyArray[0] < 1)
+                    {
+                    lblQtyErr1.Text = "+ Numbers Only";
+                    errStatus = false;
+                }*/
+                if ((Int32.TryParse(txtQty2.Text, out qtyArray[1]) == false) || (qtyArray[1] < 1)) {
+                    lblQtyErr2.Text = "Only Positive Numbers Allowed";
                     errStatus = false;
                 }
-                if (Int32.TryParse(txtQty2.Text, out qtyArray[1]) == false) {
-                    lblQtyErr2.Text = "Only Numbers";
+                if ((Int32.TryParse(txtQty3.Text, out qtyArray[2]) == false) || (qtyArray[2] < 1)) {
+                    lblQtyErr3.Text = "Only Positive Numbers Allowed";
                     errStatus = false;
                 }
-                if (Int32.TryParse(txtQty3.Text, out qtyArray[2]) == false) {
-                    lblQtyErr3.Text = "Only Numbers";
-                    errStatus = false;
-                }
+             
                 //This if statement checks the state of the flags 
                 //If the state has remained true the code is executed
                 if ((errStatus == true) && (cboStatus == true)){                    
@@ -72,7 +79,7 @@ namespace mealPlan
         }
         //This function calculates and returns the subtotal of the meal plan based on
         //the meal, price and quantity and return the result        
-        private double CalculateSubTotal(string[] mealSelect, Int32[] qty) {
+        public double CalculateSubTotal(string[] mealSelect, Int32[] qty) {
             double subTotal = 0;
             for (Int32 i = 0; i < mealSelect.Length; i++) {
                 if (mealSelect[i] == "Bagel"){ 
@@ -90,7 +97,7 @@ namespace mealPlan
         }
         //This function calculates and returns the taxes applied to the meal 
         //plan based on the subtotal   
-        private double CalculateTax(double subTotal) {
+        public double CalculateTax(double subTotal) {
             double tax = 0;
             tax = Math.Round((subTotal * 0.13), 2);
             lblShowTax.Text = "$" + Convert.ToString(tax);
@@ -98,13 +105,13 @@ namespace mealPlan
         }
         //This function calculates the final total of the meal 
         //plan based on the subtotal and taxes
-        private void CalculateTotal(double subTotal, double tax) {
+        public void CalculateTotal(double subTotal, double tax) {
             double total = 0;
             total = subTotal + tax;
             lblShowTotal.Text = "$" + Convert.ToString(total);
         }
         //This function resets all text lables used to display content to the user
-        private void resetLabels() {
+        public void resetLabels() {
             lblCboErr.ResetText();
             lblQtyErr1.ResetText();
             lblQtyErr2.ResetText();
